@@ -1,12 +1,12 @@
 map_type: costmap
 
-obstacle_range: 0.3
+obstacle_range: 0.2
 raytrace_range: 1.6
 
 transform_tolerance: 0.3
 
-robot_radius: 0.3
-inflation_radius: 0.5
+robot_radius: 0.2
+inflation_radius: 0.2
 
 observation_sources: laser_scan_sensor
 
