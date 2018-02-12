@@ -16,6 +16,16 @@
     <param name="odom_model_type" value="diff-corrected"/>
     <param name="base_frame_id" value="robot_footprint"/>
     <param name="global_frame_id" value="map"/>
+    <param name="min_particles" value="10" />
+    <param name="max_particles" value="20" />
+    <param name="transform_tolerance" value="0.3" />
+    <param name="laser_z_hit" value="0.8"/>
+    <param name="lazer_z_rand" value="0.2" />
+    <param name="odom_alpha1" value="0.1" />
+    <param name="odom_alpha2" value="0.1" />
+    <param name="odom_alpha3" value="0.1" />
+    <param name="odom_alpha4" value="0.1" />
+    
   </node>
 
 <!-- Move base -->
