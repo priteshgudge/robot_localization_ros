@@ -1,6 +1,9 @@
 <?xml version='1.0'?>
 
+
 <robot name="udacity_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find udacity_bot)/urdf/udacity_bot.gazebo" />
 
   <link name="robot_footprint"></link>
 
@@ -226,7 +229,8 @@
     <visual name="visual">
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="$(find udacity_bot)/meshes/hokuyo.dae"/>
+        <mesh filename="package://udacity_bot/meshes/hokuyo.dae"/>
+                <!-- mesh filename="$(find udacity_bot)/meshes/hokuyo.dae"/ -->
       </geometry>
     </visual>
   </link>

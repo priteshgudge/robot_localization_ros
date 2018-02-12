@@ -20,7 +20,7 @@
 
 
   <gazebo reference="camera">
-    <material>Gazebo/Green</material>
+    <material>Gazebo/Red</material>
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
@@ -88,6 +88,5 @@
       </plugin>
     </sensor>
   </gazebo>
-
-
+  
 </robot>
