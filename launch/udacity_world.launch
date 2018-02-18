@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-<include file="$(find udacity_bot)/launch/robot_description.launch"/>
+<include file="$(find robot_localization_ros)/launch/robot_description.launch"/>
 
   <arg name="world" default="empty"/> 
   <arg name="paused" default="false"/>
@@ -11,7 +11,7 @@
   <arg name="debug" default="false"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find udacity_bot)/worlds/jackal_race.world"/>
+    <arg name="world_name" value="$(find robot_localization_ros)/worlds/jackal_race.world"/>
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
