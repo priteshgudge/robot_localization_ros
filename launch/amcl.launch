@@ -17,7 +17,7 @@
     <param name="base_frame_id" value="robot_footprint"/>
     <param name="global_frame_id" value="map"/>
     <param name="min_particles" value="10" />
-    <param name="max_particles" value="20" />
+    <param name="max_particles" value="50" />
     <param name="transform_tolerance" value="0.3" />
     <param name="laser_z_hit" value="0.8"/>
     <param name="lazer_z_rand" value="0.2" />
