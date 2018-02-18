@@ -145,7 +145,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/robot_localization_ros.cpp)
-add_executable(navigation_goal src/navigation_goal.cpp)
+add_executable(navigation_goal_ros src/navigation_goal_ros.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -161,7 +161,7 @@ add_executable(navigation_goal src/navigation_goal.cpp)
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(navigation_goal ${catkin_LIBRARIES})
+target_link_libraries(navigation_goal_ros ${catkin_LIBRARIES})
 
 #############
 ## Install ##
