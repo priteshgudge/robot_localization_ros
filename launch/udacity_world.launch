@@ -23,7 +23,7 @@
   <!--spawn a robot in gazebo world-->
 
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" 
-  output="screen" args="-urdf -param robot_description -model udacity_bot"/>
+  output="screen" args="-urdf -param robot_description -model robot_localization_ros"/>
 
 <!--launch rviz-->
   <node name="rviz" pkg="rviz" type="rviz" respawn="false"/>

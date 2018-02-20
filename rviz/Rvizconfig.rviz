@@ -1,13 +1,17 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 120
+    Help Height: 0
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /RobotModel1/Links1
         - /Camera1/Visibility1
-        - /Map1
+        - /LaserScan1
+        - /Path (Local)1
+        - /Path (Global)1
+        - /Pose1
       Splitter Ratio: 0.5
-    Tree Height: 160
+    Tree Height: 280
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -96,7 +100,7 @@ Visualization Manager:
     - Class: rviz/Camera
       Enabled: true
       Image Rendering: background and overlay
-      Image Topic: /udacity_bot/camera1/image_raw
+      Image Topic: /robot_localization_ros/camera1/image_raw
       Name: Camera
       Overlay Alpha: 0.5
       Queue Size: 2
@@ -129,9 +133,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 2.53204391e-09
+      Max Intensity: 999999
       Min Color: 0; 0; 0
-      Min Intensity: 1.12103877e-44
+      Min Intensity: -999999
       Name: LaserScan
       Position Transformer: XYZ
       Queue Size: 10
@@ -139,7 +143,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.100000001
       Style: Spheres
-      Topic: /udacity_bot/laser/scan
+      Topic: /robot_localization_ros/laser/scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
@@ -255,7 +259,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 13.1462212
+      Distance: 12.8520517
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -269,10 +273,10 @@ Visualization Manager:
       Focal Shape Size: 0.0500000007
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.53979635
+      Pitch: 0.769796729
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 5.20858049
+      Yaw: 5.88357925
     Saved: ~
 Window Geometry:
   Camera:
