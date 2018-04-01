@@ -3,9 +3,9 @@ map_type: costmap
 obstacle_range: 2.5
 raytrace_range: 3.0
 
-transform_tolerance: 0.2
+transform_tolerance: 0.3
 
-robot_radius: 0.1
+robot_radius: 0.2
 inflation_radius: 0.1
 
 observation_sources: laser_scan_sensor
@@ -13,12 +13,12 @@ observation_sources: laser_scan_sensor
 laser_scan_sensor: {sensor_frame: hokuyo, data_type: LaserScan, topic: /robot_localization_ros/laser/scan, marking: true, clearing: true}
 
 pdist_scale: 2.5
-gdist_scale: 0.1
-occdist_scale: 1.5
+gdist_scale: 1.5
+occdist_scale: 1.6
 
 meter_scoring: true
 
-sim_time: 0.2
+sim_time: 1.5
 
 xy_goal_tolerance: 0.05
 yaw_goal_tolerance: 0.05

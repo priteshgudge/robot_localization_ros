@@ -3,8 +3,8 @@ global_costmap:
    robot_base_frame: robot_footprint
    update_frequency: 20.0
    publish_frequency: 15.0
-   width: 90.0
-   height: 90.0
+   width: 80.0
+   height: 80.0
    resolution: 0.1
    static_map: true
    rolling_window: false
