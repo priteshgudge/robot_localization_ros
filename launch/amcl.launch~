@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Map server -->
+  <arg name="map_file" default="$(find robot_localization_ros)/maps/jackal_race.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- Place map frame at odometry frame -->
+  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"/>
+
+  <!-- Localization-->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <remap from="scan" to="robot_localization_ros/laser/scan"/>
+    <param name="odom_frame_id" value="odom"/>
+    <param name="odom_model_type" value="diff-corrected"/>
+    <param name="base_frame_id" value="robot_footprint"/>
+    <param name="global_frame_id" value="map"/>
+    <param name="min_particles" value="10" />
+    <param name="max_particles" value="50" />
+    <param name="transform_tolerance" value="0.3" />
+    <param name="controller_frequency" value="15"/>
+    <param name="laser_z_hit" value="0.9"/>
+    <param name="lazer_z_rand" value="0.1" />
+    <param name="odom_alpha1" value="0.01" />
+    <param name="odom_alpha2" value="0.01" />
+    <param name="odom_alpha3" value="0.01" />
+    <param name="odom_alpha4" value="0.01" />
+    
+  </node>
+
+<!-- Move base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find robot_localization_ros)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find robot_localization_ros)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find robot_localization_ros)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_localization_ros)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_localization_ros)/config/base_local_planner_params.yaml" command="load" />
+
+    <remap from="cmd_vel" to="cmd_vel"/>
+    <remap from="odom" to="odom"/>
+    <remap from="scan" to="robot_localization_ros/laser/scan"/>
+
+    <param name="base_global_planner" type="string" value="navfn/NavfnROS" />
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
+    <param name="controller_frequency" value="15.0"/>
+
+  </node>
+
+
+</launch>
+

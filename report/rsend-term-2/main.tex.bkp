@@ -1,0 +1,173 @@
+%% V1.0
+%% by Gabriel Garcia, gabrcg@gmail.com
+%% This is a template for Udacity projects using IEEEtran.cls
+
+%% Be Udacious!
+
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+
+\usepackage[pdftex]{graphicx}    
+\usepackage{cite}
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{Adaptive Monte Carlo Localization Project}
+
+\author{Pritesh Gudge}
+
+\markboth{Localization project, Robotics Nanodegree Program, Udacity}%
+{}
+\IEEEtitleabstractindextext{%
+
+\begin{abstract}
+The project includes the application of the AMCL Package in ROS for localization and using sensor fusion of an Odometer and a Hokuyo Laser Range Finder in a Gazebo Simulation Environment. Two Robots with different configurations are used simulated in Gazebo for the project.The simulated robot is supposed to navigate in a controlled obstacle simulation by continuously localizing its location and building a cost map to calculate further trajectory in order to be able to reach the goal location without getting stuck and by using the shortest route possible. 
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Robot, IEEEtran, Udacity, \LaTeX, Localization, Monte Carlo Localization.
+\end{IEEEkeywords}}
+
+
+\maketitle
+\IEEEdisplaynontitleabstractindextext
+\IEEEpeerreviewmaketitle
+\section{Introduction}
+\label{sec:introduction}
+
+\IEEEPARstart{T}{he} introduction should provide some material regarding the history of the problem, why it is important and what is intended to be achieved. If there exists any previous attempts to solve this problem, this is a great place to note these while conveying the differences in your approach (if any). The intent is to provide enough information for the reader to understand why this problem is interesting and setting up the conversation for the solution you have provided
+Use this space to introduce your localization task and how you wish to accomplish it; save the details about the robot construction for later (simulation is a good point for this information). 
+If you have any papers / sites / repositories you have referenced for your robot, please make sure to cite them.
+
+%example for inserting image
+\begin{figure}[thpb]
+      \centering
+      \includegraphics[width=\linewidth]{RobotRevolution5}
+      \caption{Robot Revolution.}
+      \label{fig:robot1}
+\end{figure}
+
+\subsection{Subsection Heading Here}
+Subsection text here.
+
+\subsubsection{Subsubsection Heading Here}
+Subsubsection text here.
+
+%example for building table
+\begin{table}[h]
+\caption{Table}
+\label{table_example}
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+One & Two\\
+\hline
+Three & Four\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+\section{Background}
+At this stage, you should begin diving into the technical details of your approach by explaining to the reader what are the characteristics of the filters, what localization method was chosen, and the reason that it was selected (i.e. particle filters). 
+This should be factual and authoritative, meaning you should not use language such as "I think this will work" or "Maybe Monte Carlo Localization with these parameters is better...". Instead, focus on items similar to, "Adaptive Monte Carlo Localization was chosen because..."
+Provide a sufficient background into the scope of the problem technologically while also identifying some of the current challenges in robot localization and why the problem domain is an important piece of robotics.\cite{lamport1994latex}
+
+\subsection{Kalman Filters}
+Briefly describe Kalman filters. Explain how they work and why they are used for localization. Additionally, discuss the drawbacks of linear Kalman filters and how Extended Kalman Filters (EKFs) help resolve some of these issues.
+
+\subsection{Particle Filters}
+Briefly explain what a particle filter is, how it is used, and why it is useful.
+
+\subsection{Comparison / Contrast}
+Explain the benefits and disadvantages of using a Kalman Filter / Particle Filter. Why would you use one over the other? Also inform the reader that the work presented here will be using only particle filters. 
+
+%example for Bullet point list
+\begin{itemize}
+\item example 1
+\item example 2
+\end {itemize}
+
+%example for numbered list
+\begin{enumerate}
+\item example 1
+\item example 2
+\end{enumerate}
+
+\section{Simulations}
+This section should discuss the performance of robots in simulation. Items to include are the robot model design, packages used, and the parameters chosen for the robot to properly localize itself. The information provided here is critical if anyone would like to replicate your results. After all, the intent of reports such as these are to convey information and build upon ideas so you want to ensure others can validate your process.
+You should have at least two images here: one that shows your standard robot used in the first part of the project, and a second robot that you modified / built that is different from the first robot. Remember to watermark all of your images as well. 
+
+\subsection{Achievements}
+You should describe what you achieved for localization in the project with the benchmark model and your own model. Includes charts and graphs show how parameters affect your performance. 
+
+% Robot Models
+\subsection{Benchmark Model}
+\subsubsection{Model design}
+The Robot's design considerations should include: the size of the robot, the layout of sensors. This information can be shown in the form of a chart / table.
+
+\subsubsection{Packages Used}
+The packages used in the project should be specified as well as the topics received and published; the services it used and provided should also be addressed. 
+
+\subsubsection{Parameters}
+Localization parameters in the AMCL node should be described, as well as move\_base parameters in the configuration file. You should be able to clearly demonstrate your understanding of the impact of these parameters.
+
+\subsection{Personal Model}
+% ditto
+\subsubsection{Model design}
+\subsubsection{Packages Used}
+\subsubsection{Parameters}
+
+
+\section{Results}
+Present an unbiased view of your robot's performance and justify your stance with facts. Do the localization results look reasonable? What is the duration for the particle filters to converge? How long does it take for the robot to reach the goal? Does it follow a smooth path to the goal? Does it have unexpected behavior in the process? \\
+For demonstrating your results, it is incredibly useful to have some watermarked charts, tables, and/or graphs for the reader to review. This makes ingesting the information quicker and easier.
+
+\subsection{Localization Results}
+\subsubsection{Benchmark}
+\subsubsection{Student}
+
+\subsection{Technical Comparison} % only facts
+Discuss the difference of the layout, parameters, performance etc. between the benchmark robot and your robot. It is acceptable for your custom robot to perform worse than the provided robot. The focus is on learning and understanding, not performance. 
+
+\section{Discussion}
+This is the only section of the report where you may include your opinion. However, make sure your opinion is based on facts. If your robot performed poorly, make mention of what may be the underlying issues. If the robot runs well, which aspects contribute to that? Again, avoid writing in the first person (i.e. Do not use words like "I" or "me"). If you really find yourself struggling to avoid the word "I" or "me"; sometimes, this can be avoid with the use of the word “one”. As an example: instead of : "I think the robot cannot localize itself because the sensor does not provide enough information for localization" try: "one may believe the localization performance is poor because the sensor layout is not able to provide enough information for localization". They say the same thing, but the second avoids the first person. 
+
+\subsection{Topics}
+\begin{itemize}
+\item Which robot performed better?
+\item Why it performed better? (opinion)
+\item How would you approach the 'Kidnapped Robot' problem?
+\item What types of scenario could localization be performed?
+\item Where would you use MCL/AMCL in an industry domain?
+\end {itemize}
+
+\section{Conclusion / Future work}
+This section is intended to summarize your report. Your summary should include a recap of the results, did this project achieve what you attempted, how would you deploy it on hardware and how could this project be applied to commercial products? 
+For Future Work, address areas of work that you may not have addressed in your report as possible next steps. This could be due to time constraints, lack of currently developed methods / technology, and areas of application outside of your current implementation. Again, avoid the use of the first-person.
+
+\subsection{Modifications for Improvement}
+Examples:
+\begin{itemize}
+\item Base Dimension
+\item Sensor Location
+\item Sensor Layout
+\item Sensor Amount
+\end{itemize}
+
+\subsection{Hardware Deployment}
+\begin{enumerate}
+\item What would need to be done?
+\item Computation time/resource considerations?
+\end{enumerate}
+
+
+
+\bibliography{bib}
+\bibliographystyle{ieeetr}
+
+\end{document}

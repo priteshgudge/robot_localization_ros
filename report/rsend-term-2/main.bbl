@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{amcl}
+B.~P. Gerkey, ``Adaptive monte carlo localization.''
+  \url{http://wiki.ros.org/amcl#Parameters}.
+
+\bibitem{taylor}
+E.~W. Weisstein, ``Taylor series..''
+  \url{http://mathworld.wolfram.com/TaylorSeries.html}.
+
+\bibitem{kidnap}
+I.~Bukhori and Z.~H. Ismail, ``Detection of kidnapped robot problem in monte
+  carlo localization based on the natural displacement of the robot,'' {\em
+  International Journal of Advanced Robotic Systems}, vol.~14, no.~4,
+  p.~1729881417717469, 2017.
+
+\bibitem{amclpaper}
+S.~Thrun, D.~Fox, W.~Burgard, and F.~Dallaert, ``Robust monte carlo
+  localization for mobile robots,'' {\em Artif. Intell.}, vol.~128,
+  pp.~99--141, May 2001.
+
+\end{thebibliography}
